@@ -1,0 +1,22 @@
+@import "/styles/theme.scss";
+
+.button {
+    padding: 0.25rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+}
+
+.button-sm {
+    font-size: $text-sm;
+}
+
+.button-md {
+    font-size: $text-md;
+}
+
+.button-lg {
+    font-size: $text-lg;
+}

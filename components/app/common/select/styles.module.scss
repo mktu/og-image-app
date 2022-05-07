@@ -1,0 +1,23 @@
+@import '/styles/theme.scss';
+
+.select{
+    border : 1px solid  $border-color;
+    padding : 0.25rem;
+    border-radius : 3px;
+    &:focus {
+        outline : solid $border-focus-color;
+        border : 1px solid $border-focus-color;
+    }
+}
+
+.select-sm{
+    font-size: $text-sm;
+}
+
+.select-md{
+    font-size: $text-md;
+}
+
+.select-lg{
+    font-size: $text-lg;
+}

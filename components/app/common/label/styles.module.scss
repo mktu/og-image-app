@@ -1,0 +1,17 @@
+@import '/styles/theme.scss';
+
+.label {
+    font-weight: 600;
+}
+
+.label-sm {
+    font-size: $text-sm;
+}
+
+.label-md {
+    font-size: $text-md;
+}
+
+.label-lg {
+    font-size: $text-lg;
+}

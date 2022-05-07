@@ -7,7 +7,7 @@ async function getPage(isDev: boolean) {
     if (_page) {
         return _page;
     }
-    
+
     let puppeteer
     
     if(isDev){
@@ -24,8 +24,8 @@ async function getPage(isDev: boolean) {
 
 export async function getScreenshot(html: string, isDev: boolean) {
     const page = await getPage(isDev);
-    await page.setViewport({ width: 2048, height: 1170 });
-    await page.setContent(html);
+    await page.setViewport({ width: 1200, height: 630 });
+    await page.setContent(html, {waitUntil : 'networkidle0'});
     const file = await page.screenshot({ type : 'png' });
     return file;
 }

@@ -1,0 +1,38 @@
+@import "/styles/theme.scss";
+
+
+.icon-button-stroke-primary {
+    svg {
+        stroke: $primary-color;
+    }
+}
+
+.icon-button-stroke-secondary {
+    svg {
+        stroke: $secondary-color;
+    }
+}
+
+.icon-button-stroke-text {
+    svg {
+        stroke: $text-color;
+    }
+}
+
+.icon-button-fill-primary {
+    svg {
+        fill: $primary-color;
+    }
+}
+
+.icon-button-fill-secondary {
+    svg {
+        fill: $secondary-color;
+    }
+}
+
+.icon-button-fill-text {
+    svg {
+        fill: $text-color;
+    }
+}

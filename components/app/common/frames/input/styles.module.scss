@@ -1,0 +1,28 @@
+@import "/styles/theme.scss";
+
+.container {
+    width: 350px;
+}
+
+.item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    select {
+        width: 150px;
+    }
+}
+
+.error {
+    color: $text-error;
+    font-size: $text-sm;
+    display: flex;
+    align-items: center;
+    > svg {
+        margin-top : 0.25rem;
+        margin-right : 0.5rem;
+        margin-left : auto;
+        fill : $text-error;
+    }
+}

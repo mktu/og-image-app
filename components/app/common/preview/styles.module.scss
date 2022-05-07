@@ -1,0 +1,17 @@
+@import '/styles/theme.scss';
+
+.container{
+    padding : 0.5rem;
+}
+.preview-manu{
+    display : flex;
+    align-items: center;
+}
+.preview{
+    padding : 0.5rem;
+}
+.label{
+    font-weight: 600;
+    font-size: $text-sm;
+    margin-bottom : 0.5rem;
+}

@@ -1,0 +1,23 @@
+@import '/styles/theme.scss';
+
+.input {
+    border : 1px solid  $border-color;
+    padding : 0.25rem;
+    border-radius : 3px;
+    &:focus {
+        outline : solid $border-focus-color;
+        border : 1px solid $border-focus-color;
+    }
+}
+
+.input-sm {
+    font-size: $text-sm;
+}
+
+.input-md {
+    font-size: $text-md;
+}
+
+.input-lg {
+    font-size: $text-lg;
+}

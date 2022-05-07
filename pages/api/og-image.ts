@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import ogpImage from '../../components/ogp-image'
-import { getScreenshot } from '../../libs/chronium'
+import { renderBlogOgImage } from '@components/og-image'
+import { getScreenshot } from '@libs/chronium'
 
 type Data = {
   name: string
@@ -14,7 +14,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   try {
-    const html = ogpImage()
+    const html = await renderBlogOgImage(req)
     const file = await getScreenshot(html, isDev)
     res.statusCode = 200;
     res.setHeader('Content-Type', `image/png`);
