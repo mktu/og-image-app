@@ -47,6 +47,7 @@ export const Markup: React.FC<MarkupProps> = ({
 }) => {
     return (
         <html>
+            <meta charSet='UTF-8' />
             {/* eslint-disable-next-line @next/next/no-head-element */}
             <head>
                 {font && (
