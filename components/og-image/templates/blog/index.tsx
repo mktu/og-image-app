@@ -29,7 +29,7 @@ export const Component: React.FC<ComponentProps> = ({
         ...bodyStyle,
         fontFamily: font ? `'${font}'` : bodyStyle.fontFamily
     }}>
-        <div style={logoStyle}><Logo width={504 / 2} height={152 / 2} /></div>
+        <div style={logoStyle}><Logo width={500 / 2} height={291 / 2} /></div>
         <div style={{ ...titleStyle, fontSize: titleFontSize }}>{title}</div>
         <div style={{ ...authorStyle, fontSize: authorFontSize }}>
             {authorImageUrl && (

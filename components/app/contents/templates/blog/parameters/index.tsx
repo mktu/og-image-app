@@ -1,11 +1,11 @@
 import Input from '@components/app/common/input'
 import Select from '@components/app/common/select'
 import InputFrame from '@components/app/common/frames/input'
-import useBlog from '@hooks/useBlog'
-import { PixelSizes } from '@hooks/useBlog/useParameters'
+import useBlogTemplate from '@hooks/useBlogTemplate'
+import { PixelSizes } from '@hooks/useBlogTemplate/useParameters'
 import styles from './styles.module.scss'
 
-type Props = ReturnType<typeof useBlog>['paramProps']
+type Props = ReturnType<typeof useBlogTemplate>['paramProps']
 
 const Parameters: React.FC<Props> = ({
     register,

@@ -1,10 +1,10 @@
 import styles from './styles.module.scss'
-import Params from '@components/app/contents/blog/parameters'
+import Params from '@components/app/contents/templates/blog/parameters'
 import Preview from '@components/app/common/preview'
-import useBlog from '@hooks/useBlog'
+import useBlogTemplate from '@hooks/useBlogTemplate'
 
 const Content: React.FC = () => {
-    const { paramProps, previewProps } = useBlog()
+    const { paramProps, previewProps } = useBlogTemplate()
     return (
         <div className={styles.container}>
             <header>

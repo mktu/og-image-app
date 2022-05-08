@@ -1,11 +1,9 @@
 import useParameters from './useParameters'
 import usePreview from './usePreview'
 
-const useBlog = ()=>{
+const useBlogTemplate = ()=>{
     const paramProps = useParameters()
-    const previewProps = usePreview({
-        ...paramProps
-    })
+    const previewProps = usePreview()
     
     return {
         paramProps,
@@ -13,4 +11,4 @@ const useBlog = ()=>{
     }
 }
 
-export default useBlog
+export default useBlogTemplate

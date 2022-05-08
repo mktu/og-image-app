@@ -1,0 +1,55 @@
+@import "/styles/theme.scss";
+
+.outlined-button-primary {
+    color : $primary-color;
+    border : 1px solid $primary-color;
+    fill : $primary-color;
+    stroke : $primary-color;
+
+    &:hover {
+        color : $primary-dark-color;
+        border : 1px solid $primary-dark-color;
+        fill : $primary-dark-color;
+        stroke : $primary-dark-color;
+    }
+    &:focus {
+        outline : solid $primary-color;
+    }
+}
+
+.outlined-button-secondary {
+    color : $secondary-color;
+    border : 1px solid $secondary-color;
+    fill : $secondary-color;
+    stroke : $secondary-color;
+    outline : solid $secondary-color;
+
+    &:hover{
+        color : $secondary-dark-color;
+        border : 1px solid $secondary-dark-color;
+        fill : $secondary-dark-color;
+        stroke : $secondary-dark-color;
+        outline : solid $secondary-dark-color;
+    }
+    &:focus {
+        outline : solid $secondary-color;
+    }
+}
+
+.outlined-button-text {
+    color : $text-color;
+    border : 1px solid $text-color;
+    fill : $text-color;
+    stroke : $text-color;
+    outline : solid $text-color;
+
+    &:hover{
+        color : $text-dark-color;
+        border : 1px solid $text-dark-color;
+        fill : $text-dark-color;
+        stroke : $text-dark-color;
+    }
+    &:focus {
+        outline : solid $text-color;
+    }
+}

@@ -1,22 +1,31 @@
 @import "/styles/theme.scss";
 
 .button {
-    padding: 0.25rem;
     background-color: transparent;
-    border: none;
     cursor: pointer;
-    outline: none;
     appearance: none;
+}
+
+.button-border-none {
+    border: none;
+    outline: none;
+}
+
+.button-border-rounded {
+    border-radius: 5px;
 }
 
 .button-sm {
     font-size: $text-sm;
+    padding: 0.25rem 0.5rem;
 }
 
 .button-md {
     font-size: $text-md;
+    padding: 0.5rem 0.5rem;
 }
 
 .button-lg {
     font-size: $text-lg;
+    padding: 0.25rem 0.5rem;
 }
