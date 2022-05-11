@@ -31,7 +31,7 @@ const Parameters: React.FC<Props> = ({
                         message : 'Must be a URL'
                     } })} />
             </InputFrame>
-            <InputFrame className={styles['input-item']} label='Author Font Size' error={errors['authorFontSize']}>
+            <InputFrame className={styles['input-item']} label='Author Font Size' error={errors['authorFontSize']?.message}>
                 <Select {...register('authorFontSize')} >
                     {PixelSizes.map(v => (<option key={v}>{v}</option>))}
                 </Select>

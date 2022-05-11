@@ -6,6 +6,7 @@ import { parseRequest } from './parse'
 import { bodyStyle, logoStyle, titleStyle, authorStyle, authorImageStyle } from './style'
 import Logo from './logo'
 
+
 export type ComponentProps = {
     title: string,
     authorName: string,
@@ -43,6 +44,8 @@ export const Component: React.FC<ComponentProps> = ({
 
 export const Markup: React.FC<MarkupProps> = ({
     font,
+    title,
+    authorName,
     ...props
 }) => {
     return (
@@ -51,12 +54,12 @@ export const Markup: React.FC<MarkupProps> = ({
             {/* eslint-disable-next-line @next/next/no-head-element */}
             <head>
                 {font && (
-                    <style dangerouslySetInnerHTML={{ __html: createRequestUrl(font) }} />
+                    <style dangerouslySetInnerHTML={{ __html: createRequestUrl(font, encodeURIComponent(title+authorName)) }} />
                 )}
                 {/* <style dangerouslySetInnerHTML={{ __html: `@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1&display=swap');` }} /> */}
             </head>
             <body >
-                <Component font={font} {...props}/>
+                <Component font={font} title={title} authorName={authorName} {...props}/>
             </body>
         </html>
     )

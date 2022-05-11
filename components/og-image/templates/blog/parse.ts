@@ -9,6 +9,7 @@ export function parseRequest(req: IncomingMessage) {
         titleFontSize = '36px', 
         authorName = '', 
         authorFontSize = '36px', 
+        font = '',
         authorImageUrl = '',  } = ( query || {} );
 
     const parsedRequest : ComponentProps = {
@@ -16,6 +17,7 @@ export function parseRequest(req: IncomingMessage) {
         titleFontSize : titleFontSize as string,
         authorName : authorName as string,
         authorFontSize: authorFontSize as string,
+        font : font as string,
         authorImageUrl: authorImageUrl ? decodeURIComponent(authorImageUrl as string) : ''
     };
     return parsedRequest;
