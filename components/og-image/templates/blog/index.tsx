@@ -1,6 +1,6 @@
 import { NextApiRequest } from "next"
-import React, { CSSProperties } from "react"
-import ReactDOM from 'react-dom/server'
+import { CSSProperties } from "react"
+import { renderToStaticMarkup } from 'react-dom/server'
 import { createRequestUrl } from '@libs/font'
 import { parseRequest } from './parse'
 import { bodyStyle, logoStyle, titleStyle, authorStyle, authorImageStyle } from './style'
@@ -66,6 +66,6 @@ export const Markup: React.FC<MarkupProps> = ({
 }
 
 export const renderNode = async (req: NextApiRequest) => {
-    const html = ReactDOM.renderToStaticMarkup(<Markup {...parseRequest(req)} />)
+    const html = renderToStaticMarkup(<Markup {...parseRequest(req)} />)
     return '<!doctype html>' + html
 }
