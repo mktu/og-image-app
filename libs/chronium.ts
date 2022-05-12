@@ -10,11 +10,7 @@ async function getPage(isDev: boolean) {
 
     let puppeteer
     
-    if(isDev){
-        puppeteer = await import('puppeteer')
-    }else{
-        puppeteer = await import('puppeteer-core')
-    }
+    puppeteer = await import('puppeteer-core')
     
     const options = await getOptions(isDev);
     const browser = await puppeteer.launch(options);
