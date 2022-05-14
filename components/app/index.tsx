@@ -1,3 +1,3 @@
-import Main from './contents/templates/blog'
+import Main from './home'
 
 export default Main

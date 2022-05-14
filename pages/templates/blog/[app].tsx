@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import App from '@components/app'
+import App from '@components/app/contents/templates/blog'
 import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
