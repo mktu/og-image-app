@@ -1,6 +1,7 @@
 import { NextRouter, useRouter } from 'next/router';
-import { useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { useForm } from "react-hook-form";
+import AppSettingContext from '@contexts/AppSettingContext';
 import usePush from '../usePush'
 
 export const PixelSizes = ['48px', '64px', '92px'] as const
@@ -11,6 +12,7 @@ const getFromRouter = (r:NextRouter, key:string, defaultValue = '')=>{
 
 const useParameters = () => {
     const router = useRouter()
+    const { app } = useContext(AppSettingContext)
     const { register, watch, formState: { errors } } = useForm({
         mode: 'onChange', defaultValues: {
             'title': getFromRouter(router,'title'),
@@ -21,7 +23,6 @@ const useParameters = () => {
         }
     });
     const push = usePush()
-    const app = (router.query['app'] || 'app') as string
     const title = watch('title');
     const authorName = watch('authorName');
     const authorImageUrl = watch('authorImageUrl');
