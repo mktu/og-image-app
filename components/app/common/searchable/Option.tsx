@@ -8,7 +8,7 @@ type Props = Omit<Parameters<typeof TextButton>[0], 'onSelect'> & {
     onSelect: (key : string)=>void
 }
 
-const Option = forwardRef<HTMLButtonElement, Props>(({
+const Option : React.FC<Props> = ({
     option,
     onChange,
     onFocus,
@@ -35,7 +35,7 @@ const Option = forwardRef<HTMLButtonElement, Props>(({
             {option.value}
         </TextButton>
     )
-})
+}
 
 Option.displayName = 'Option'
 

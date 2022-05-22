@@ -29,7 +29,7 @@ const Searchable = forwardRef<HTMLInputElement, Props>(({
 
     useEffect(() => {
         if (text) {
-            setCurrentOptions(options.filter(v => v.value.includes(text as string)))
+            setCurrentOptions(options.filter(v => v.value.startsWith(text as string)))
         } else {
             setCurrentOptions(options)
         }
@@ -102,7 +102,6 @@ const Searchable = forwardRef<HTMLInputElement, Props>(({
                         <AngleDown width={16} height={16} strokeWidth={1}/>
                     </IconButton>
                 )}
-
             </span>
             <div className={styles['options-wrapper']}>
                 <Clickaway onClickAway={() => {

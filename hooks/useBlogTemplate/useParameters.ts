@@ -6,6 +6,13 @@ import usePush from '../usePush'
 
 export const PixelSizes = ['48px', '64px', '92px'] as const
 
+const FontlistApiBasePath = 'https://api.fontsource.org/v1/fonts'
+
+const fetchFontFamily = async (fontId:string)=>{
+    const ret =  await fetch(`${FontlistApiBasePath}/${fontId}`)
+    return (await ret.json())['family']
+}
+
 const getFromRouter = (r:NextRouter, key:string, defaultValue = '')=>{
     return (r.query[key] || defaultValue) as string
 }
@@ -25,6 +32,8 @@ const useParameters = () => {
     });
     const push = usePush()
     const fontStates = useState('')
+    const [fontId] = fontStates
+    const [fontFamily,setFontFamily] = useState('')
     const title = watch('title');
     const authorName = watch('authorName');
     const authorImageUrl = watch('authorImageUrl');
@@ -32,6 +41,10 @@ const useParameters = () => {
     const authorFontSize = watch('authorFontSize');
 
     const hasError = Object.keys(errors).length !== 0
+
+    useEffect(()=>{
+        fontId && fetchFontFamily(fontId).then(setFontFamily)
+    },[fontId])
     useEffect(() => {
         if (hasError ) {
             return
@@ -44,7 +57,7 @@ const useParameters = () => {
             authorImageUrl,
             titleFontSize,
             authorFontSize,
-            font : 'M PLUS 1'
+            font : fontFamily
         };
         Object.keys(data).forEach(key => (data[key] === undefined || data[key] === '') && delete data[key])
         const searchParams = new URLSearchParams(data);
@@ -58,7 +71,7 @@ const useParameters = () => {
         return () => {
             unmounted = true
         }
-    }, [app, title, authorName, authorImageUrl, titleFontSize, authorFontSize, hasError, push])
+    }, [app, title, authorName, authorImageUrl, titleFontSize, authorFontSize, fontFamily, hasError, push])
     return {
         register,
         errors,
