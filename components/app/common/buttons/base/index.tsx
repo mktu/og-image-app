@@ -2,7 +2,7 @@ import { forwardRef, ButtonHTMLAttributes } from 'react'
 import styles from './styles.module.scss'
 
 type Variants = {
-    textSize?: 'sm' | 'md' | 'lg',
+    textSize?: 'sm' | 'md' | 'lg' | 'none',
     border ?: 'none' | 'rounded'
 }
 

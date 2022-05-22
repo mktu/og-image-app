@@ -1,0 +1,37 @@
+@import "/styles/theme.scss";
+
+.text-button {
+    background-color: transparent;
+}
+
+.text-button-primary {
+    color : $primary-color;
+    &:hover {
+        color : $primary-dark-color;
+    }
+    &:focus {
+        outline : solid $primary-color;
+    }
+}
+
+.text-button-secondary {
+    color : $secondary-color;
+
+    &:hover{
+        color : $secondary-dark-color;
+    }
+    &:focus {
+        outline : solid $secondary-color;
+    }
+}
+
+.text-button-text {
+    color : $text-color;
+
+    &:hover{
+        color : $text-dark-color;
+    }
+    &:focus {
+        outline : solid $text-color;
+    }
+}

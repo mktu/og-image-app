@@ -1,5 +1,5 @@
 import { NextRouter, useRouter } from 'next/router';
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useForm } from "react-hook-form";
 import AppSettingContext from '@contexts/AppSettingContext';
 import usePush from '../usePush'
@@ -20,9 +20,11 @@ const useParameters = () => {
             'titleFontSize': getFromRouter(router,'titleFontSize','64px'),
             'authorFontSize': getFromRouter(router,'titleFontSize','48px'),
             'authorImageUrl': getFromRouter(router,'authorImageUrl'),
+            'font' : ''
         }
     });
     const push = usePush()
+    const fontStates = useState('')
     const title = watch('title');
     const authorName = watch('authorName');
     const authorImageUrl = watch('authorImageUrl');
@@ -60,6 +62,7 @@ const useParameters = () => {
     return {
         register,
         errors,
+        fontStates,
     }
 }
 

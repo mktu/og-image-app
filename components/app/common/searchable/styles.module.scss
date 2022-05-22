@@ -1,0 +1,55 @@
+@import "/styles/theme.scss";
+.options-wrapper {
+    position: relative;
+    margin-top : 0.25rem;
+}
+.input-wrapper {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid $border-color;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    > svg {
+        margin-right: 0.25rem;
+    }
+    &:focus-within {
+        outline: solid $border-focus-color;
+        border: 1px solid $border-focus-color;
+    }
+}
+
+.input-checker-unresolved {
+    fill: $hover-color;
+    stroke: $hover-color;
+}
+.input-checker-resolved {
+    fill: $primary-color;
+    stroke: $primary-color;
+}
+.options {
+    position: absolute;
+    max-height: 250px;
+    overflow-y: auto;
+    background-color: $paper-color;
+    border: 1px solid $border-color;
+    transition: all 0.5s 0s ease;
+    margin: 0;
+    padding: 0.5rem;
+    list-style: none;
+}
+.option-item {
+    width: 100%;
+    background-color: transparent;
+    &:focus {
+        background-color: $hover-color;
+    }
+    &:hover {
+        background-color: $hover-color;
+    }
+}
+.option-item-selected {
+    background-color: $hover-color !important;
+    #option-item-selected {
+        background-color: $hover-color !important;
+    }
+}

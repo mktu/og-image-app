@@ -1,8 +1,13 @@
 @import '/styles/theme.scss';
 
 .input {
-    border : 1px solid  $border-color;
     padding : 0.25rem;
+    border : none;
+    outline: none;
+}
+
+.input-border-default {
+    border : 1px solid  $border-color;
     border-radius : 3px;
     &:focus {
         outline : solid $border-focus-color;

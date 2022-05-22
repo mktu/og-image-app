@@ -1,5 +1,9 @@
 @import "/styles/theme.scss";
 
+.outlined-button {
+    background-color: transparent;
+}
+
 .outlined-button-primary {
     color : $primary-color;
     border : 1px solid $primary-color;

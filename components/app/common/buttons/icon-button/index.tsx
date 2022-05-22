@@ -6,8 +6,8 @@ type StrokeType = 'stroke-primary' | 'stroke-secondary' | 'stroke-text'
 type FillType = 'fill-primary' | 'fill-secondary' | 'fill-text'
 
 type Props = Parameters<typeof Base>[0] & {
-    strokeType ?: StrokeType,
-    fillType ?: FillType
+    strokeType?: StrokeType,
+    fillType?: FillType
 }
 
 
@@ -18,7 +18,14 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
     fillType = 'fill-text',
     ...props
 }, ref) => {
-    return <Base ref={ref} {...props} className={`${styles[`icon-button-${strokeType}`]} ${styles[`icon-button-${fillType}`]} ${className}`} />
+    return <Base ref={ref}
+        textSize='none'
+        className={`
+    ${styles[`icon-button`]} 
+    ${styles[`icon-button-${strokeType}`]} 
+    ${styles[`icon-button-${fillType}`]} 
+    ${className}`}
+        {...props} />
 })
 
 Button.displayName = 'Icon-Button'
